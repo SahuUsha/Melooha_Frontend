@@ -108,7 +108,30 @@ export default function DashboardPage() {
 
   return (
     <main className="cosmos-page dashboard-page">
-      <CosmicAuthBackground />
+      {/* <CosmicAuthBackground /> */}
+      <div className="cosmos-bg auth-cosmos-bg" aria-hidden="true">
+  <div className="nebula nebula-one" />
+  <div className="nebula nebula-two" />
+
+  {Array.from({ length: 75 }, (_, i) => (
+    <span
+      key={i}
+      className="cosmic-star"
+      style={{
+        left: `${(i * 37 + 13) % 100}%`,
+        top: `${(i * 61 + 7) % 100}%`,
+        animationDelay: `${(i % 9) * 0.45}s`,
+        animationDuration: `${2 + (i % 5)}s`,
+        width: i % 7 === 0 ? "3px" : "2px",
+        height: i % 7 === 0 ? "3px" : "2px",
+      }}
+    />
+  ))}
+
+  <span className="shooting-star shooting-one" />
+  <span className="shooting-star shooting-two" />
+  <span className="shooting-star shooting-three" />
+</div>
 
       <aside className="dashboard-sidebar">
         <Link to="/" className="dashboard-brand">
@@ -121,21 +144,25 @@ export default function DashboardPage() {
         <p className="dashboard-nav-label">MENU</p>
 
         <nav className="dashboard-navigation">
-  {navigation.map((item) => {
-    const Icon = item.icon;
+          {navigation.map((item) => {
+            const Icon = item.icon;
 
-    return (
-      <Link
-        key={item.label}
-        to={item.href}
-        className={`dashboard-nav-item ${item.active ? "active" : ""}`}
-      >
-        <Icon size={18} />
-        <span>{item.label}</span>
-      </Link>
-    );
-  })}
+            return (
+              <Link
+                key={item.label}
+                to={item.href}
+                className={`dashboard-nav-item ${
+                  item.active ? "active" : ""
+                }`}
+              >
+                <Icon size={18} />
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
 
+        <div className="dashboard-sidebar-bottom">
   <button
     type="button"
     className="dashboard-nav-item"
@@ -144,18 +171,7 @@ export default function DashboardPage() {
     <LogOut size={18} />
     <span>Sign out</span>
   </button>
-</nav>
-
-        {/* <div className="dashboard-sidebar-bottom">
-  <button
-    type="button"
-    className="dashboard-nav-item"
-    onClick={handleLogout}
-  >
-    <LogOut size={18} />
-    <span>Sign out</span>
-  </button>
-</div> */}
+</div>
       </aside>
 
       <section className="dashboard-main">

@@ -36,7 +36,7 @@ const suggestions = [
     {
         icon: Orbit,
         title: "Career & Purpose",
-        question: "What does my birth chart reveal about my career?",
+        question: "Which planets influence my career according to Vedic astrology?",
     },
     {
         icon: Sparkles,
