@@ -21,10 +21,10 @@ export interface QuestionDoneResponse {
   remaining_balance: number;
 }
 
-interface StreamEvent {
-  event: string;
-  data: Record<string, unknown>;
-}
+// interface StreamEvent {
+//   event: string;
+//   data: Record<string, unknown>;
+// }
 
 interface StreamCallbacks {
   onToken: (token: string) => void;

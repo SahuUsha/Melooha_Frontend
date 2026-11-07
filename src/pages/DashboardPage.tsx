@@ -8,7 +8,7 @@ import {
   MessageCircle,
   History,
   UserRound,
-  Settings,
+  // Settings,
   ArrowRight,
   Moon,
   Sun,
@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
-import CosmicAuthBackground from "../components/common/CosmicAuthBackground";
+
 import {
   getBirthChart,
   type BirthChartResponse,

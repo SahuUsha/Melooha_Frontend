@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import {
     Sparkles,
     Send,
-    MessageCircle,
     UserRound,
     RefreshCw,
     Coins,
